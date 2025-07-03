@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Normalize CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Font       -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Nossa Folha de Estilo -->
+    <link rel="stylesheet" href="./assets/css/global.css" />
+    <link rel="stylesheet" href="./assets/css/pokedex.css" />
+
     <title>Pokedex</title>
-    <style>
-        body{
-            background: rgb(40, 145, 243);
-        }
-        h1{            
-            text-align: center;
-            color: blueviolet;
-            background-color: rgb(182, 245, 35);
-        }
-        p{
-             margin: 1px solid black;
-            text-align: center;
-            color: gainsboro;
-           
-        }
-        .button{
-            display: flex;
-            justify-content: center;
-            align-items: center;         
-        }
-    </style>
-</head>
-<body>
-    <h1>Helo world </h1>
-    <p>Hello world this is my first web site</p>
+  </head>
+  <body>
+    <section class="content">
+      <h1>Pokedex</h1>
 
-    <div id="vamos" type ="button" class="button"  >
-        <button>Let's Go</button>
-    </div>
-    <script>
+        <ol id="pokemonList" class="pokemons">
+               
+        </ol>
 
-       const vamos = document.getElementById("vamos")
-       vamos.addEventListener("click", function(){
+      <div class="pagination">
+        <button id="loadMoreButton" type="button">Load More</button>
+      </div>
+    </section>
 
-            alert(" Você acabou de Entrar no mundo da Programação")
-       })
-    </script>
-</body>
+    <!-- Nosso JS -->
+    <script src="/assets/js/pokemon-model.js"></script>
+    <script src="/assets/js/poke-api.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>
