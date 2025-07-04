@@ -14,8 +14,14 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
 
     pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
 
+    // ✨ Campos usados no verso do card:
+    pokemon.height = pokeDetail.height / 10; // decímetros → metros
+    pokemon.weight = pokeDetail.weight / 10; // hectogramas → kg
+    pokemon.abilities = pokeDetail.abilities.map((a) => a.ability.name)
+
     return pokemon
 }
+
 
 pokeApi.getPokemonDetail = (pokemon) => {
     return fetch(pokemon.url)
